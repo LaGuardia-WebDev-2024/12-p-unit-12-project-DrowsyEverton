@@ -24,68 +24,68 @@ Select ONE Additional Feature to Add
     <h1>Everton's Quiz On</h1> <h1 id=jha>Jhariah</h1>
     <hr />
     <!-- Movie Question -->
-    <form id="first">
+    <form id="albumform">
       <label>
         1️⃣ == What was Jhariah's first album? ==
-        <select id="movie-answer">
-          <option value="movie1">Trust Ceremony</option>
-          <option value="movie2">To Mend The Sun</option>
-          <option value="movie3">A Beginner's Guide to Faking Your Death</option>
-          <option value="movie4">The Great Table Of How I Ruined It All. </option>
+        <select id="album-answer">
+          <option value="album1">Trust Ceremony</option>
+          <option value="album2">To Mend The Sun</option>
+          <option value="album3">A Beginner's Guide to Faking Your Death</option>
+          <option value="album4">The Great Table Of How I Ruined It All. </option>
         </select>
       </label>
       <button type="submit">Submit</button>
     </form>
-    <div id="movie-result">
-      <p id="movie-text"></p>
+    <div id="album-result">
+      <p id="album-text"></p>
     </div>
     <hr />
     <!-- Book Question -->
-    <form id="book-form">
+    <form id="song-form">
       <label>
         2️⃣ == What is my favorite Jhariah song? ==
-        <select id="book-answer">
-          <option value="book1">FIRE4FUN</option>
-          <option value="book2">Flight Of Crows</option>
-          <option value="book3">Knives Are Dangerous</option>
-          <option value="book4">PRESSURE BOMB 2!!!!</option>
+        <select id="song-answer">
+          <option value="song1">FIRE4FUN</option>
+          <option value="song2">Flight Of Crows</option>
+          <option value="song3">Knives Are Dangerous</option>
+          <option value="song4">PRESSURE BOMB 2!!!!</option>
         </select>
       </label>
-      <button type="submit">Check Book Answer</button>
+      <button type="submit">Submit</button>
     </form>
-    <div id="book-result">
-      <p id="book-text"></p>
+    <div id="song-result">
+      <p id="song-text"></p>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
       
       //========================Movie Question jQuery Code
-      $("#movie-form").on("submit", function (event) {
+      $("#albumform").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#movie-answer");
+        var $answer = $("#album-answer");
         var answer = $answer.val();
 
-        if (answer === "movie1") {
-          $("#movie-text").text("YESSSS!");
+        if (answer === "album4") {
+          $("#album-text").text("Correct!");
         } 
         else {
-          $("#movie-text").text("Try Again!");
+          $("#album-text").text("Incorrect. Try Again.");
         }
       });
 
       //=======================Book Question jQuery Code
-      $("#book-form").on("submit", function (event) {
+      $("#song-form").on("submit", function (event) {
         event.preventDefault();
 
-        var $answer = $("#book-answer");
+        var $answer = $("#song-answer");
         var answer = $answer.val();
 
-        if (answer === "book1") {
-          $("#book-text").text("YESSSS!");
+        if (answer === "song2") {
+          $("#song-text").text("Correct!");
         } 
         else {
-          $("#book-text").text("Try Again!");
+          $("#song-text").text("Incorrect. Try Again.");
         }
       });
       
