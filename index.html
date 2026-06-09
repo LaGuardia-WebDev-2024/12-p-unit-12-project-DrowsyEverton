@@ -1,14 +1,14 @@
 <!-- Unit 12 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
-[  ] Standard Animation
-[  ] Custom Animation
-[  ] Include Three Images
+[ yes ] Two Interactive Drop-down Inputs 
+[ yes  ] Standard Animation
+[ yes ] Custom Animation
+[ yes ] Include Three Images
 
 Select ONE Additional Feature to Add  
-[ no ] Feature 1 - Google Font
+[ yes ] Feature 1 - Google Font
 [ no ] Feature 2 - Chain jQuery Methods
-[ no ] Feature 3 - .mouseover() & .mouseOut() Methods
+[ yes ] Feature 3 - .mouseover() & .mouseOut() Methods
 [ no ] Feature 4 - :hover Feature 
 [ no ] Feature 5 - Add an Additional Interactive Drop-down
 -->
@@ -31,7 +31,7 @@ Select ONE Additional Feature to Add
           <option value="album1">Trust Ceremony</option>
           <option value="album2">To Mend The Sun</option>
           <option value="album3">A Beginner's Guide to Faking Your Death</option>
-          <option value="album4">The Great Table Of How I Ruined It All. </option>
+          <option value="album4">The Great Tale Of How I Ruined It All. </option>
         </select>
       </label>
       <button type="submit">Submit</button>
@@ -56,14 +56,21 @@ Select ONE Additional Feature to Add
     <div id="song-result">
       <p id="song-text"></p>
     </div>
-    <img src="https://first-avenue.com/wp-content/uploads/2023/02/jhariah-2025-1424x1080crop.jpg"
-    <img src="https://f4.bcbits.com/img/a3438537016_10.jpg"
-    <img src="https://f4.bcbits.com/img/a2918517539_10.jpg"
+    <div id="results">
+    <img id="piano" src="https://f4.bcbits.com/img/a3438537016_10.jpg">
+    </div>
+
+    <div id="result-2 album-result">
+    <img  id="crows" src="https://f4.bcbits.com/img/a2918517539_10.jpg">
+    </div>
+     <img id="guitar" src="https://first-avenue.com/wp-content/uploads/2023/02/jhariah-2025-1424x1080crop.jpg" width="1500">
     
  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
-      
+     $("#results").hide();
+     
+     $("#result-2").hide();
       //========================Movie Question jQuery Code
       $("#albumform").on("submit", function (event) {
         event.preventDefault();
@@ -73,7 +80,9 @@ Select ONE Additional Feature to Add
 
         if (answer === "album4") {
           $("#album-text").text("Correct!");
-        } 
+          $("#result-2").fadeIn();
+        }
+
         else {
           $("#album-text").text("Incorrect. Try Again.");
         }
@@ -88,11 +97,22 @@ Select ONE Additional Feature to Add
 
         if (answer === "song2") {
           $("#song-text").text("Correct!");
+          $("#results").fadeIn();
         } 
         else {
           $("#song-text").text("Incorrect. Try Again.");
         }
+        
       });
+      $("#guitar").mouseover(function(){
+      $("#guitar").animate({
+      width:"1550px"
+     
+      });
+
+      
+      });
+
       
     </script>
   </body>
